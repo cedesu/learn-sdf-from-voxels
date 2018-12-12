@@ -34,11 +34,11 @@ print("Random Seed: ", opt.manualSeed)
 random.seed(opt.manualSeed)
 torch.manual_seed(opt.manualSeed)
 
-dataset = PartDataset(root='..//sdf_newnew', train=True)
+dataset = PartDataset(root='data', train=True)
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=opt.batchSize,
                                          shuffle=True, num_workers=int(opt.workers))
 
-test_dataset = PartDataset(root='..//sdf_newnew', train=False)
+test_dataset = PartDataset(root='data', train=False)
 testdataloader = torch.utils.data.DataLoader(test_dataset, batch_size=opt.batchSize,
                                              shuffle=True, num_workers=int(opt.workers))
 
