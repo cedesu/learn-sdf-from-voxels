@@ -49,7 +49,7 @@ class PartDataset(data.Dataset):
                         k1=63-k
                     out_sdf[0, i, j, k] = sdf[18+i1,18+j1,18+k1]
         #truncate
-        #out_sdf=np.clip(out_sdf,-20,20)
+        out_sdf=np.clip(out_sdf,-20,20)
         in_voxel = np.sign(out_sdf)
 
         in_voxel = torch.from_numpy(in_voxel)
